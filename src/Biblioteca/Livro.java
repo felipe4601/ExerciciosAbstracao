@@ -19,7 +19,7 @@ public class Livro extends ItemBiblioteca{
 
     @Override
     public String toString() {
-        return "Livro | " +
+        return  "Livro\t| " +
                 "Autor: " + autor +
                 " | Ano de Publicação: " + anoPublicacao +
                 " | Título: " + titulo;
