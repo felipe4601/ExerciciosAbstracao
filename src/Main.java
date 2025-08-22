@@ -3,12 +3,19 @@ import Biblioteca.Livro;
 import Biblioteca.Revista;
 import ContaBancaria.ContaBancaria;
 import ContaBancaria.OperacoesConta;
+import Cursos.Curso;
+import Cursos.CursoOnline;
+import Cursos.CursoPresencial;
 import GestaoDeColaboradores.Funcionario;
 import GestaoDeColaboradores.FuncionarioCLT;
 import GestaoDeColaboradores.FuncionarioFreelancer;
 import LojaOnline.ProdutoDigital;
 import LojaOnline.ProdutoFisico;
 import LojaOnline.Vendavel;
+import SistemaDeNotificacoes.Notificacao;
+import SistemaDeNotificacoes.NotificacaoEmail;
+import SistemaDeNotificacoes.NotificacaoPush;
+import SistemaDeNotificacoes.NotificacaoSMS;
 import Tarefa.Concluivel;
 import Tarefa.Tarefa;
 import produto.Exibivel;
@@ -161,6 +168,82 @@ public class Main {
         luiz.exibirDados();
 
         // Exercício 7
+        // Instanciando objetos
+        Notificacao mensagem1 = new NotificacaoEmail();
+        Notificacao mensagem2 = new NotificacaoPush();
+        Notificacao mensagem3 = new NotificacaoSMS();
+
+
+        List<Notificacao> mensagens = new ArrayList<>();
+        mensagens.add(mensagem1);
+        mensagens.add(mensagem2);
+        mensagens.add(mensagem3);
+
+        for (Notificacao n: mensagens){
+            n.enviar("Olá, tudo bem?\n   " +
+                    "O sistema de notificação já foi atualizado, favor \n   " +
+                    "passar para a equipe de testes validar as \n   " +
+                    "atualizações.\n   " +
+                    "Muito Obrigado!!");
+        }
+
+        // Exercício 8
+
+        // Cursos presenciais
+        Curso java = new CursoPresencial("Desenvolvedor Back-end", 160,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+        Curso cSharp = new CursoPresencial("Programção em C#", 60,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+        Curso python = new CursoPresencial("Programção em Python", 60,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+        Curso ia102 = new CursoPresencial("Desenvolvimento de soluções em inteligência artificial - Microsoft AI-102", 60,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+        Curso bcDados = new CursoPresencial("Banco de Dados para Data Science", 40,"Rua Moreira de Godói, 226 - Ipiranga - São Paulo/SP");
+        Curso powerBi = new CursoPresencial("Microsoft Power BI", 32,"Rua Aracati Mirim, 115 - Vila Alpina - São Paulo/SP");
+        Curso aws = new CursoPresencial("Desenvolvedor Back-end", 40,"Rua Luiz Lacava, 202 - Vila Bocaina - Mauá/SP");
+        Curso javaFundamentos = new CursoPresencial("Java Fundamentals", 80,"Rua Teixeira de Melo, 106 - Tatuapé - São Paulo/SP");
+        Curso linux = new CursoPresencial("Administrador de Servidores Linux", 80,"Rua Bento Branco de Andrade Filho, 379 - Santo Amaro - São Paulo/SP");
+        Curso react = new CursoPresencial("Desenvolvedor Front-end", 160,"Rua Monsenhor Andrade, 298 - Brás - São Paulo/SP");
+        Curso excel = new CursoPresencial("Excel Avançado", 40,"Rua Gandavo, 550 - Vila Mariana - São Paulo/SP");
+        Curso photoshop = new CursoPresencial("Adobe Photoshop", 60,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+        Curso googlecloud = new CursoPresencial("Implantação de Serviços em Nuvem - Google Cloud Foundations", 40,"Rua Niteroi, 180 - Centro - São Caetano do Sul/SP");
+
+
+        // Cursos Online
+        Curso angular = new CursoOnline("Guia completo Angular MMaximilian Schwarzmüller",54, "https://www.udemy.com/course/the-complete-guide-to-angular-2/");
+        Curso cSharpOn = new CursoOnline("C# COMPLETO Programação Orientada a Objetos + Projetos",38, "https://www.udemy.com/course/programacao-orientada-a-objetos-csharp/?couponCode=MT180825G1");
+        Curso springBoot = new CursoOnline("[NEW] Spring Boot 3, Spring 6 & Hibernate for Beginners",35, "https://www.udemy.com/course/spring-hibernate-tutorial/?couponCode=MT180825G1");
+        Curso dotNet = new CursoOnline(".NET Core: um curso orientado para o mercado de trabalho",43, "https://www.udemy.com/course/net-core-curso-orientado-para-mercado-de-trabalho/?couponCode=MT180825G1");
+        Curso reactOn = new CursoOnline("React do Zero a Maestria (c/ hooks, router, API, Projetos)",30, "https://www.udemy.com/course/react-do-zero-a-maestria-c-hooks-router-api-projetos/?couponCode=MT180825G1");
+        Curso htmlCss = new CursoOnline("Curso Web Frontend Fundamentos HTML CSS JS + de 10 Projetos",131, "https://www.udemy.com/course/curso-web-design-fundamentos-aprenda-html-css-e-javascript/");
+        Curso ingles = new CursoOnline("Guia completo Angular MMaximilian Schwarzmüller",54, "https://www.udemy.com/course/the-complete-guide-to-angular-2/");
+        Curso az900On = new CursoOnline("Conceitos básicos do Microsoft Azure",24, "https://learn.microsoft.com/pt-br/training/courses/az-900t00");
+        Curso ai102On = new CursoOnline("Engenheiro de IA do Azure Associado",30, "https://learn.microsoft.com/pt-br/credentials/certifications/azure-ai-engineer/?practice-assessment-type=certification#certification-practice-for-the-exam");
+
+        List<Curso> cursos = new ArrayList<>();
+
+        cursos.add(java);
+        cursos.add(cSharp);
+        cursos.add(python);
+        cursos.add(ia102);
+        cursos.add(bcDados);
+        cursos.add(powerBi);
+        cursos.add(aws);
+        cursos.add(javaFundamentos);
+        cursos.add(linux);
+        cursos.add(react);
+        cursos.add(excel);
+        cursos.add(photoshop);
+        cursos.add(googlecloud);
+        cursos.add(angular);
+        cursos.add(cSharpOn);
+        cursos.add(springBoot);
+        cursos.add(dotNet);
+        cursos.add(reactOn);
+        cursos.add(htmlCss);
+        cursos.add(ingles);
+        cursos.add(az900On);
+        cursos.add(ai102On);
+
+        for(Curso c: cursos){
+            c.exibirDetalhes();
+        }
 
 
 
